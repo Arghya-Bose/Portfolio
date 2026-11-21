@@ -2,32 +2,22 @@
 <html lang="en">
 
 <head>
-
-  <!-- BASIC SETUP -->
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="WlHZTPb2Xg9dW6UdDDPd3z9f84wiZXSsZ1Y1rJwRw0M" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- TITLE (MOST IMPORTANT FOR SEO) -->
   <title>Arghya Bose | Software Engineer</title>
 
-  <!-- SEO META TAGS -->
   <meta name="description"
     content="Arghya Bose - Software Engineer specializing in Android Development, Web3, Blockchain and Machine Learning applications. Explore projects, skills, and achievements.">
-
   <meta name="keywords"
     content="Arghya Bose, Software Engineer, Portfolio, Android Developer, Web3 Developer, Machine Learning, Anna University, CSE Student">
-
   <meta name="author" content="Arghya Bose">
-
-  <!-- GOOGLE SEARCH INDEX -->
   <meta name="robots" content="index, follow">
 
-  <!-- FAVICON (TAB ICON) -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/faviconb.png">
   <link rel="apple-touch-icon" href="./images/faviconb.png">
 
-  <!-- OPEN GRAPH (FOR LINK PREVIEW: LinkedIn / WhatsApp / Facebook) -->
   <meta property="og:title" content="Arghya Bose | Software Engineer">
   <meta property="og:description"
     content="Software Engineer specializing in Android, Web3, Blockchain and Machine Learning applications.">
@@ -35,17 +25,16 @@
   <meta property="og:url" content="https://Arghya-Bose.github.io/Portfolio/">
   <meta property="og:image" content="https://Arghya-Bose.github.io/Portfolio/images/profile.jpeg">
 
-  <!-- TWITTER PREVIEW -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Arghya Bose | Software Engineer">
   <meta name="twitter:description" content="Android • Web3 • Machine Learning Developer">
   <meta name="twitter:image" content="https://Arghya-Bose.github.io/Portfolio/images/profile.jpeg">
 
-  <!-- CANONICAL URL -->
   <link rel="canonical" href="https://Arghya-Bose.github.io/Portfolio/">
 
+  <!-- Supabase uses Circular (licensed) + Source Code Pro. Inter is the closest free match for Circular. -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap"
     rel="stylesheet">
   <script type="application/ld+json">
 {
@@ -71,24 +60,26 @@
       padding: 0
     }
 
+    /* Supabase dark theme tokens */
     :root {
-      --bg: #0d0e0f;
-      --surface: #141516;
-      --surface2: #1c1d1f;
-      --border: #2a2b2d;
-      --border2: #333436;
-      --text: #f0ede8;
-      --muted: #8a8782;
-      --faint: #4a4845;
-      --accent: #e8c547;
-      --accent2: #f5d96a;
-      --accent-dim: #2d2710;
+      --bg: #171717;
+      --surface: #1f1f1f;
+      --surface2: #282828;
+      --border: #2e2e2e;
+      --border2: #3e3e3e;
+      --text: #ededed;
+      --muted: #a0a0a0;
+      --faint: #707070;
+      --accent: #3ecf8e;
+      --accent2: #6ee7b7;
+      --accent-dim: rgba(62, 207, 142, 0.1);
+      --accent-line: rgba(62, 207, 142, 0.35);
       --blue: #5b9cf6;
-      --green: #4ade80;
+      --green: #3ecf8e;
       --coral: #f87171;
-      --font: 'Syne', sans-serif;
-      --body: 'Instrument Sans', sans-serif;
-      --mono: 'JetBrains Mono', monospace;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --body: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --mono: 'Source Code Pro', ui-monospace, Menlo, monospace;
     }
 
     html {
@@ -99,14 +90,14 @@
       font-family: var(--body);
       background: var(--bg);
       color: var(--text);
-      font-size: 16px;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden
     }
 
     ::-webkit-scrollbar {
-      width: 4px
+      width: 6px
     }
 
     ::-webkit-scrollbar-track {
@@ -114,10 +105,11 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--faint);
-      border-radius: 2px
+      background: var(--border2);
+      border-radius: 3px
     }
 
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -127,26 +119,38 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 3rem;
-      height: 64px;
-      background: rgba(13, 14, 15, 0.95);
-      backdrop-filter: blur(16px);
+      padding: 0 2rem;
+      height: 56px;
+      background: rgba(23, 23, 23, 0.85);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border)
     }
 
     .nav-logo {
       font-family: var(--font);
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--accent);
-      letter-spacing: 0.02em;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+      letter-spacing: -0.01em;
       text-decoration: none;
-      flex-shrink: 0
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .nav-logo::before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: var(--accent);
+      display: inline-block
     }
 
     .nav-links {
       display: flex;
-      gap: 0;
+      gap: 2px;
       list-style: none;
       align-items: center
     }
@@ -154,13 +158,11 @@
     .nav-links a {
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.75rem;
+      font-size: 0.82rem;
       font-family: var(--font);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      transition: color 0.2s, background 0.2s;
-      text-transform: uppercase;
-      padding: 6px 14px;
+      font-weight: 500;
+      transition: color 0.15s, background 0.15s;
+      padding: 6px 12px;
       border-radius: 6px;
       display: block;
       white-space: nowrap
@@ -168,12 +170,12 @@
 
     .nav-links a:hover {
       color: var(--text);
-      background: var(--surface)
+      background: var(--surface2)
     }
 
     .nav-links a.active {
-      color: var(--accent);
-      background: var(--accent-dim)
+      color: var(--text);
+      background: var(--surface2)
     }
 
     .nav-right {
@@ -183,27 +185,6 @@
       flex-shrink: 0
     }
 
-    .nav-cta {
-      background: var(--accent);
-      color: #0d0e0f;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-family: var(--font);
-      font-weight: 700;
-      font-size: 0.78rem;
-      cursor: pointer;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: opacity 0.2s;
-      white-space: nowrap
-    }
-
-    .nav-cta:hover {
-      opacity: 0.85
-    }
-
-    /* HAMBURGER */
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -235,15 +216,14 @@
       transform: translateY(-7px) rotate(-45deg)
     }
 
-    /* MOBILE DRAWER */
     .nav-drawer {
       display: none;
       position: fixed;
-      top: 64px;
+      top: 56px;
       left: 0;
       right: 0;
       z-index: 99;
-      background: rgba(13, 14, 15, 0.98);
+      background: rgba(23, 23, 23, 0.98);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       padding: 1rem 1.5rem 1.5rem;
@@ -258,31 +238,21 @@
     .nav-drawer a {
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-family: var(--font);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      font-weight: 500;
       padding: 10px 14px;
-      border-radius: 8px;
-      transition: color 0.2s, background 0.2s
+      border-radius: 6px;
+      transition: color 0.15s, background 0.15s
     }
 
     .nav-drawer a:hover,
     .nav-drawer a.active {
-      color: var(--accent);
-      background: var(--accent-dim)
+      color: var(--text);
+      background: var(--surface2)
     }
 
-    .nav-drawer .drawer-cta {
-      background: var(--accent);
-      color: #0d0e0f;
-      text-align: center;
-      margin-top: 8px;
-      border-radius: 8px;
-      padding: 12px 14px
-    }
-
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -292,13 +262,26 @@
       overflow: hidden
     }
 
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      width: 900px;
+      height: 500px;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(62, 207, 142, 0.14) 0%, transparent 65%);
+      pointer-events: none
+    }
+
     .hero-grid {
       position: absolute;
       inset: 0;
       background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: 0.25;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%)
+      background-size: 56px 56px;
+      opacity: 0.35;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 100%)
     }
 
     .hero-inner {
@@ -316,7 +299,6 @@
       max-width: 680px
     }
 
-    /* Offset anchor scroll for fixed navbar */
     section[id] {
       scroll-margin-top: 72px
     }
@@ -329,7 +311,7 @@
     .hero-photo-ring {
       position: relative;
       width: 280px;
-      height: 280px;
+      height: 280px
     }
 
     .hero-photo-ring::before {
@@ -339,7 +321,7 @@
       border-radius: 50%;
       background: conic-gradient(var(--accent) 0deg, var(--accent2) 90deg, transparent 180deg, var(--accent) 360deg);
       animation: spin 6s linear infinite;
-      z-index: 0;
+      z-index: 0
     }
 
     .hero-photo-ring::after {
@@ -348,7 +330,7 @@
       inset: -1px;
       border-radius: 50%;
       background: var(--bg);
-      z-index: 1;
+      z-index: 1
     }
 
     @keyframes spin {
@@ -367,13 +349,12 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+      background: var(--surface);
       border: 3px solid var(--border);
       overflow: hidden;
       display: flex;
       align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      justify-content: center
     }
 
     .hero-photo img {
@@ -383,140 +364,13 @@
       display: block
     }
 
-    .hero-photo-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      height: 100%;
-      color: var(--muted);
-      text-align: center;
-      padding: 1.5rem;
-      transition: opacity 0.2s;
-    }
-
-    .hero-photo-placeholder .avatar-initials {
-      font-family: var(--font);
-      font-weight: 800;
-      font-size: 3.5rem;
-      color: var(--accent);
-      line-height: 1;
-    }
-
-    .hero-photo-placeholder .upload-hint {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: var(--faint);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 4px;
-    }
-
-    .hero-photo:hover .hero-photo-placeholder {
-      opacity: 0.7
-    }
-
-    .upload-overlay {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      z-index: 3;
-      background: rgba(13, 14, 15, 0.7);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      opacity: 0;
-      transition: opacity 0.2s;
-      pointer-events: none;
-    }
-
-    .contact-avatar {
-      width: 130px;
-      height: 130px;
-      margin: auto;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .timeline-org {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 6px;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-secondary);
-    }
-
-    .timeline-org {
-      margin-top: 6px;
-    }
-
-    .company-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 15px;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .company-link:hover {
-      color: var(--blue);
-    }
-
-    .company-logo {
-      width: 45px;
-      height: 45px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: #fff;
-      padding: 3px;
-      border: 1px solid rgba(128, 128, 128, 0.2);
-      flex-shrink: 0;
-      transition: transform 0.2s ease;
-    }
-
-    .company-link:hover .company-logo {
-      transform: scale(1.08);
-    }
-
-    .avatar-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-photo:hover .upload-overlay {
-      opacity: 1
-    }
-
-    .upload-overlay span {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--accent);
-      text-align: center;
-      letter-spacing: 0.06em
-    }
-
-    #photo-input {
-      display: none
-    }
-
     .photo-dots {
       position: absolute;
       inset: -20px;
       border-radius: 50%;
       border: 1px dashed var(--border2);
       z-index: 0;
-      animation: spin 20s linear infinite reverse;
+      animation: spin 20s linear infinite reverse
     }
 
     .photo-dot {
@@ -527,7 +381,7 @@
       border-radius: 50%;
       top: 50%;
       left: 0;
-      transform: translateY(-50%) translateX(-3px);
+      transform: translateY(-50%) translateX(-3px)
     }
 
     .hero-badge {
@@ -535,13 +389,13 @@
       align-items: center;
       gap: 8px;
       background: var(--accent-dim);
-      border: 1px solid var(--accent);
+      border: 1px solid var(--accent-line);
       color: var(--accent);
       font-family: var(--mono);
-      font-size: 0.72rem;
-      padding: 6px 14px;
-      border-radius: 4px;
-      margin-bottom: 2rem;
+      font-size: 0.74rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 1.8rem;
       animation: fadeUp 0.6s ease both
     }
 
@@ -569,10 +423,10 @@
 
     .hero h1 {
       font-family: var(--font);
-      font-weight: 800;
-      font-size: clamp(2.8rem, 7vw, 5.2rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
+      font-weight: 600;
+      font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
       animation: fadeUp 0.7s 0.1s ease both
     }
 
@@ -581,7 +435,7 @@
     }
 
     .hero-sub {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--muted);
       margin-top: 1.5rem;
       max-width: 560px;
@@ -592,7 +446,7 @@
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       margin-top: 2rem;
       animation: fadeUp 0.7s 0.3s ease both
     }
@@ -601,15 +455,15 @@
       font-family: var(--mono);
       font-size: 0.72rem;
       color: var(--muted);
-      border: 1px solid var(--border2);
-      padding: 6px 12px;
-      border-radius: 4px;
+      border: 1px solid var(--border);
+      padding: 5px 11px;
+      border-radius: 6px;
       background: var(--surface)
     }
 
     .hero-actions {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
       margin-top: 2.5rem;
       flex-wrap: wrap;
       animation: fadeUp 0.7s 0.4s ease both
@@ -617,44 +471,42 @@
 
     .btn-primary {
       background: var(--accent);
-      color: #0d0e0f;
-      padding: 12px 28px;
-      border-radius: 8px;
-      border: none;
+      color: #0b1f15;
+      padding: 10px 20px;
+      border-radius: 6px;
+      border: 1px solid #2fb577;
       font-family: var(--font);
-      font-weight: 700;
-      font-size: 0.9rem;
+      font-weight: 500;
+      font-size: 0.88rem;
       cursor: pointer;
       text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: transform 0.2s, opacity 0.2s;
+      transition: background 0.15s, border-color 0.15s;
       display: inline-block
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.9
+      background: #4fe0a0;
+      border-color: var(--accent)
     }
 
     .btn-ghost {
-      background: transparent;
+      background: var(--surface2);
       color: var(--text);
-      padding: 12px 28px;
-      border-radius: 8px;
+      padding: 10px 20px;
+      border-radius: 6px;
       border: 1px solid var(--border2);
       font-family: var(--font);
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: 500;
+      font-size: 0.88rem;
       cursor: pointer;
       text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color 0.15s, background 0.15s;
       display: inline-block
     }
 
     .btn-ghost:hover {
-      border-color: var(--accent);
-      background: var(--accent-dim)
+      border-color: var(--faint);
+      background: #303030
     }
 
     .hero-stats {
@@ -662,7 +514,7 @@
       gap: 3rem;
       margin-top: 4rem;
       border-top: 1px solid var(--border);
-      padding-top: 2.5rem;
+      padding-top: 2.2rem;
       animation: fadeUp 0.7s 0.5s ease both;
       flex-wrap: wrap
     }
@@ -670,17 +522,18 @@
     .stat-num {
       font-family: var(--font);
       font-size: 2rem;
-      font-weight: 800;
+      font-weight: 600;
+      letter-spacing: -0.02em;
       color: var(--accent)
     }
 
     .stat-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--muted);
       margin-top: 2px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      font-family: var(--font)
+      font-family: var(--mono)
     }
 
     @keyframes fadeUp {
@@ -703,24 +556,24 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 3.5rem
+      margin-bottom: 3rem
     }
 
     .section-label {
       font-family: var(--mono);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       white-space: nowrap
     }
 
     .section-title {
       font-family: var(--font);
-      font-weight: 800;
-      font-size: 2.2rem;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
+      font-weight: 600;
+      font-size: 1.9rem;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
       white-space: nowrap
     }
 
@@ -740,44 +593,46 @@
     .about-text p {
       color: var(--muted);
       margin-bottom: 1.2rem;
-      font-size: 1rem
+      font-size: 0.98rem
     }
 
     .about-text p strong {
-      color: var(--text)
+      color: var(--text);
+      font-weight: 500
     }
 
     .about-info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem
+      gap: 0.9rem
     }
 
     .info-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.2rem
+      border-radius: 8px;
+      padding: 1.1rem
     }
 
     .info-card .label {
       font-size: 0.68rem;
       color: var(--faint);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       font-family: var(--mono);
       margin-bottom: 6px
     }
 
     .info-card .value {
       font-family: var(--font);
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text)
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--text);
+      word-break: break-word
     }
 
     .info-card .value a {
-      color: var(--blue);
+      color: var(--accent);
       text-decoration: none
     }
 
@@ -794,8 +649,8 @@
     .edu-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
+      border-radius: 8px;
+      padding: 1.8rem;
       transition: border-color 0.2s
     }
 
@@ -805,7 +660,7 @@
 
     .edu-degree {
       font-family: var(--font);
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1rem;
       margin-bottom: 6px
     }
@@ -813,14 +668,14 @@
     .edu-school {
       color: var(--accent);
       font-family: var(--font);
-      font-weight: 600;
+      font-weight: 500;
       font-size: 0.95rem;
       margin-bottom: 4px
     }
 
     .edu-meta {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
       flex-wrap: wrap;
       margin-top: 10px
     }
@@ -832,12 +687,12 @@
       background: var(--surface2);
       border: 1px solid var(--border);
       padding: 4px 10px;
-      border-radius: 4px
+      border-radius: 6px
     }
 
     .edu-gpa {
       color: var(--green) !important;
-      border-color: rgba(74, 222, 128, 0.3) !important
+      border-color: var(--accent-line) !important
     }
 
     .timeline {
@@ -874,24 +729,59 @@
 
     .timeline-date {
       font-family: var(--mono);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       margin-bottom: 6px
     }
 
     .timeline-role {
       font-family: var(--font);
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: -0.01em
+      font-weight: 600;
+      font-size: 1.08rem;
+      letter-spacing: -0.015em
     }
 
     .timeline-org {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
       font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted)
+    }
+
+    .company-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
       color: var(--muted);
-      margin-bottom: 4px
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease
+    }
+
+    .company-link:hover {
+      color: var(--accent)
+    }
+
+    .company-logo {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+      padding: 3px;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+      transition: transform 0.2s ease
+    }
+
+    .company-link:hover .company-logo {
+      transform: scale(1.06)
     }
 
     .timeline-desc {
@@ -918,14 +808,14 @@
     .skills-layout {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem
+      gap: 1.2rem
     }
 
     .skill-category {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
+      border-radius: 8px;
+      padding: 1.4rem;
       transition: border-color 0.2s
     }
 
@@ -935,11 +825,9 @@
 
     .skill-cat-title {
       font-family: var(--font);
-      font-weight: 700;
-      font-size: 0.82rem;
+      font-weight: 500;
+      font-size: 0.85rem;
       color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
@@ -949,7 +837,7 @@
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px
+      gap: 6px
     }
 
     .skill-tag {
@@ -958,28 +846,32 @@
       color: var(--muted);
       font-family: var(--mono);
       font-size: 0.7rem;
-      padding: 5px 10px;
-      border-radius: 5px;
+      padding: 4px 9px;
+      border-radius: 6px;
       transition: border-color 0.2s, color 0.2s;
       cursor: default
     }
 
+    .skill-tag:empty {
+      display: none
+    }
+
     .skill-tag:hover {
-      border-color: var(--accent);
+      border-color: var(--accent-line);
       color: var(--accent)
     }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-      gap: 1.5rem
+      gap: 1.2rem
     }
 
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.8rem;
+      border-radius: 8px;
+      padding: 1.6rem;
       transition: border-color 0.2s, transform 0.2s;
       position: relative;
       overflow: hidden
@@ -1008,22 +900,22 @@
 
     .project-number {
       font-family: var(--mono);
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       color: var(--faint);
       margin-bottom: 1rem
     }
 
     .project-name {
       font-family: var(--font);
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: -0.01em;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.015em;
       margin-bottom: 0.8rem
     }
 
     .project-desc {
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.87rem;
       margin-bottom: 1.2rem;
       line-height: 1.6
     }
@@ -1041,8 +933,8 @@
       background: var(--surface2);
       border: 1px solid var(--border);
       color: var(--muted);
-      padding: 3px 9px;
-      border-radius: 4px
+      padding: 3px 8px;
+      border-radius: 6px
     }
 
     .project-links {
@@ -1052,8 +944,8 @@
 
     .project-link {
       font-family: var(--font);
-      font-weight: 600;
-      font-size: 0.8rem;
+      font-weight: 500;
+      font-size: 0.82rem;
       color: var(--accent);
       text-decoration: none;
       display: flex;
@@ -1071,25 +963,26 @@
       top: 1.2rem;
       right: 1.2rem;
       font-family: var(--mono);
-      font-size: 0.62rem;
-      background: var(--green);
-      color: #0d2410;
-      padding: 3px 9px;
-      border-radius: 3px;
+      font-size: 0.64rem;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-line);
+      color: var(--accent);
+      padding: 2px 9px;
+      border-radius: 999px;
       font-weight: 500
     }
 
     .ach-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem
+      gap: 1.2rem
     }
 
     .ach-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.8rem;
+      border-radius: 8px;
+      padding: 1.6rem;
       border-left: 3px solid var(--accent)
     }
 
@@ -1100,14 +993,14 @@
 
     .ach-title {
       font-family: var(--font);
-      font-weight: 700;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 0.98rem;
       margin-bottom: 8px
     }
 
     .ach-desc {
       color: var(--muted);
-      font-size: 0.87rem;
+      font-size: 0.86rem;
       line-height: 1.6
     }
 
@@ -1120,8 +1013,8 @@
     .cert-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
@@ -1129,7 +1022,7 @@
     }
 
     .cert-card:hover {
-      border-color: var(--accent)
+      border-color: var(--accent-line)
     }
 
     .cert-icon {
@@ -1140,58 +1033,20 @@
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      flex-shrink: 0
-    }
-
-    .cert-icon.java {
-      background: #fff3cd;
-      color: #b8860b
-    }
-
-    .cert-icon.py {
-      background: #dbeafe;
-      color: #1d4ed8
-    }
-
-    .cert-icon.az {
-      background: #ede9fe;
-      color: #6d28d9
-    }
-
-    .cert-icon.db {
-      background: #dcfce7;
-      color: #166534
-    }
-
-    .cert-icon.kt {
-      background: #fce7f3;
-      color: #9d174d
-    }
-
-    .cert-icon.ux {
-      background: #ffedd5;
-      color: #c2410c
-    }
-
-    .cert-icon.re {
-      background: #e0f2fe;
-      color: #0c4a6e
-    }
-
-    .cert-icon.da {
-      background: #fef9c3;
-      color: #854d0e
+      flex-shrink: 0;
+      background: var(--surface2);
+      border: 1px solid var(--border)
     }
 
     .cert-name {
       font-family: var(--font);
-      font-weight: 600;
+      font-weight: 500;
       font-size: 0.88rem;
       margin-bottom: 3px
     }
 
     .cert-issuer {
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--muted);
       font-family: var(--mono)
     }
@@ -1199,8 +1054,8 @@
     .contact-wrap {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 3.5rem;
+      border-radius: 12px;
+      padding: 3.2rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
@@ -1209,9 +1064,10 @@
 
     .contact-left h2 {
       font-family: var(--font);
-      font-weight: 800;
-      font-size: 2.4rem;
-      letter-spacing: -0.02em;
+      font-weight: 600;
+      font-size: 2.2rem;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
       margin-bottom: 1rem
     }
 
@@ -1224,24 +1080,24 @@
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 1rem
+      gap: 0.8rem
     }
 
     .contact-link {
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 1rem 1.2rem;
+      padding: 0.9rem 1.1rem;
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 8px;
       text-decoration: none;
       color: var(--text);
       transition: border-color 0.2s, background 0.2s
     }
 
     .contact-link:hover {
-      border-color: var(--accent);
+      border-color: var(--accent-line);
       background: var(--accent-dim)
     }
 
@@ -1267,7 +1123,7 @@
 
     .contact-link-value {
       font-family: var(--font);
-      font-weight: 600;
+      font-weight: 500;
       font-size: 0.9rem
     }
 
@@ -1276,25 +1132,26 @@
     }
 
     .contact-avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: var(--accent-dim);
-      border: 3px solid var(--accent);
+      width: 140px;
+      height: 140px;
       margin: 0 auto 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font);
-      font-weight: 800;
-      font-size: 2.6rem;
-      color: var(--accent)
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35)
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
     }
 
     .contact-name {
       font-family: var(--font);
-      font-weight: 800;
-      font-size: 1.3rem
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em
     }
 
     .contact-title-txt {
@@ -1308,19 +1165,19 @@
       align-items: center;
       gap: 6px;
       margin-top: 1rem;
-      background: rgba(74, 222, 128, 0.1);
-      border: 1px solid var(--green);
-      color: var(--green);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-line);
+      color: var(--accent);
       font-family: var(--mono);
       font-size: 0.7rem;
-      padding: 6px 14px;
-      border-radius: 4px
+      padding: 5px 13px;
+      border-radius: 999px
     }
 
     .avail-dot {
       width: 6px;
       height: 6px;
-      background: var(--green);
+      background: var(--accent);
       border-radius: 50%;
       animation: pulse 2s infinite
     }
@@ -1336,7 +1193,7 @@
 
     @media(max-width:1000px) {
       nav {
-        padding: 0 1.5rem
+        padding: 0 1.2rem
       }
 
       .nav-links {
@@ -1366,14 +1223,14 @@
         height: 180px
       }
 
-      .hero-photo-placeholder .avatar-initials {
-        font-size: 2.5rem
-      }
-
       .about-grid,
       .edu-grid,
       .contact-wrap {
         grid-template-columns: 1fr
+      }
+
+      .contact-wrap {
+        padding: 2rem 1.4rem
       }
 
       .hero-stats {
@@ -1383,6 +1240,11 @@
       .projects-grid {
         grid-template-columns: 1fr
       }
+
+      .section-title {
+        white-space: normal;
+        font-size: 1.5rem
+      }
     }
   </style>
 </head>
@@ -1390,7 +1252,7 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="#">AB</a>
+    <a class="nav-logo" href="#">Arghya Bose</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
@@ -1408,7 +1270,6 @@
     </div>
   </nav>
 
-  <!-- MOBILE DRAWER -->
   <div class="nav-drawer" id="nav-drawer">
     <a href="#about">About</a>
     <a href="#education">Education</a>
@@ -1452,19 +1313,17 @@
         </div>
       </div>
 
-      <!-- PROFILE PHOTO -->
       <div class="hero-photo-wrap">
         <div class="hero-photo-ring">
           <div class="photo-dots">
             <div class="photo-dot"></div>
           </div>
-
           <div class="hero-photo">
-            <img src="images\profile.jpeg" class="profile-img">
+            <img src="images/profile.jpeg" alt="Arghya Bose" class="profile-img">
           </div>
-
         </div>
       </div>
+    </div>
   </section>
 
   <section id="about">
@@ -1474,15 +1333,15 @@
       <div class="section-line"></div>
     </div>
     <div class="about-grid">
-<div class="about-text">
-  <p>I'm <strong>Arghya Bose</strong>, currently working as a <strong>Mobile Application Developer at Bdjobs.com Ltd</strong>, contributing to the development and maintenance of Android applications using Kotlin and Java.</p>
+      <div class="about-text">
+        <p>I'm <strong>Arghya Bose</strong>, currently working as a <strong>Mobile Application Developer at Bdjobs.com Ltd</strong>, contributing to the development and maintenance of Android applications using Kotlin and Java.</p>
 
-  <p>I'm a <strong>Computer Science &amp; Engineering graduate from Anna University, Chennai</strong>, originally from <strong>Dhaka, Bangladesh</strong>, with a passion for building practical, user-focused software solutions.</p>
+        <p>I'm a <strong>Computer Science &amp; Engineering graduate from Anna University, Chennai</strong>, originally from <strong>Dhaka, Bangladesh</strong>, with a passion for building practical, user-focused software solutions.</p>
 
-  <p>My interests span <strong>Android development, backend integration, blockchain technology, and machine learning</strong>. Through academic and personal projects, I've explored technologies such as Firebase, REST APIs, TensorFlow Lite, Google ML Kit, and modern Android development tools.</p>
+        <p>My interests span <strong>Android development, backend integration, blockchain technology, and machine learning</strong>. Through academic and personal projects, I've explored technologies such as Firebase, REST APIs, TensorFlow Lite, Google ML Kit, and modern Android development tools.</p>
 
-  <p>I believe good software is built through continuous learning, problem-solving, and real-world experience. I'm always looking to improve my technical skills and contribute to products that make a meaningful impact.</p>
-</div>
+        <p>I believe good software is built through continuous learning, problem-solving, and real-world experience. I'm always looking to improve my technical skills and contribute to products that make a meaningful impact.</p>
+      </div>
       <div class="about-info-grid">
         <div class="info-card">
           <div class="label">Email</div>
@@ -1564,7 +1423,7 @@
         <div class="timeline-role">Software Development Intern</div>
         <div class="timeline-org">
           <a href="https://pyroferus.com/" target="_blank" rel="noopener noreferrer" class="company-link">
-            <img src="images/pylogo.webp" alt="Bdjobs Logo" class="company-logo" />
+            <img src="images/pylogo.webp" alt="Pyroferus Logo" class="company-logo" />
             <span>Pyroferus Technologies</span>
           </a>
         </div>
@@ -1595,7 +1454,7 @@
         <div class="skill-cat-title">📱 Development</div>
         <div class="skill-tags"><span class="skill-tag">Android Development</span><span class="skill-tag">Machine
             Learning</span><span class="skill-tag">Blockchain</span><span class="skill-tag">Web Frontend</span><span
-            class="skill-tag">Smart Contracts</span><span class="skill-tag"></span></div>
+            class="skill-tag">Smart Contracts</span></div>
       </div>
       <div class="skill-category">
         <div class="skill-cat-title">🛠 Frameworks & Libraries</div>
@@ -1667,7 +1526,6 @@
             class="project-link">↗ GitHub</a></div>
       </div>
 
-
       <div class="project-card">
         <div class="project-number">04</div>
         <div class="project-name">Blockchain-Web3 Coffee Shopping App</div>
@@ -1678,8 +1536,9 @@
         <div class="project-links"><a href="https://github.com/Arghya-Bose/Blockchain_Web3_Model_ToBuy_Coffee"
             target="_blank" class="project-link">↗ GitHub</a></div>
       </div>
+
       <div class="project-card">
-        <span class="project-badge" style="background:var(--blue);color:#042c53">In Production</span>
+        <span class="project-badge">In Production</span>
         <div class="project-number">05</div>
         <div class="project-name">Pharmacy Management Cloud App</div>
         <div class="project-desc">Cloud-based pharmacy management application streamlining inventory, billing, and daily
@@ -1750,56 +1609,56 @@
     </div>
     <div class="certs-grid">
       <div class="cert-card">
-        <div class="cert-icon java">☕</div>
+        <div class="cert-icon">☕</div>
         <div>
           <div class="cert-name">Java Masterclass 2025 — 130+ Hours</div>
           <div class="cert-issuer">Udemy</div>
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon py">🐍</div>
+        <div class="cert-icon">🐍</div>
         <div>
           <div class="cert-name">Crash Course on Python</div>
           <div class="cert-issuer">Google · Coursera</div>
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon az">☁️</div>
+        <div class="cert-icon">☁️</div>
         <div>
           <div class="cert-name">Azure Machine Learning</div>
           <div class="cert-issuer">Microsoft · Coursera</div>
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon da">📊</div>
+        <div class="cert-icon">📊</div>
         <div>
           <div class="cert-name">Data Analysis with Python</div>
           <div class="cert-issuer">IBM · Coursera</div>
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon db">🗄</div>
+        <div class="cert-icon">🗄</div>
         <div>
           <div class="cert-name">Database Structures &amp; Management with MySQL</div>
           <div class="cert-issuer">IBM · Coursera</div>
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon kt">⚡</div>
+        <div class="cert-icon">⚡</div>
         <div>
           <div class="cert-name">Advanced Kotlin Programming</div>
           <div class="cert-issuer">Meta · Coursera</div>
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon ux">🎨</div>
+        <div class="cert-icon">🎨</div>
         <div>
           <div class="cert-name">UX/UI Design Principles</div>
           <div class="cert-issuer">Meta · Coursera</div>
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon re">⚛️</div>
+        <div class="cert-icon">⚛️</div>
         <div>
           <div class="cert-name">Advanced React</div>
           <div class="cert-issuer">Meta · Coursera</div>
@@ -1851,28 +1710,23 @@
         </div>
       </div>
       <div class="contact-right">
-
         <div class="contact-avatar">
           <img src="images/profile.jpeg" alt="Arghya Bose" class="avatar-img">
         </div>
-
         <div class="contact-name">Arghya Bose</div>
         <div class="contact-title-txt">Developer · CSE @ Anna University</div>
-
         <div class="avail-badge">
           <span class="avail-dot"></span>Open to Opportunities
         </div>
-
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Arghya Bose © 2025</p>
+    <p>Arghya Bose © 2026</p>
   </footer>
 
   <script>
-    // Smooth scroll for all nav links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -1882,12 +1736,10 @@
       });
     });
 
-    // Scroll animations
     const els = document.querySelectorAll('.project-card,.skill-category,.cert-card,.ach-card,.edu-card,.timeline-item,.info-card');
     const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)' } }) }, { threshold: 0.1 });
     els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(18px)'; el.style.transition = 'opacity 0.5s ease,transform 0.5s ease'; obs.observe(el) });
 
-    // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a, .nav-drawer a');
     const scrollSpy = new IntersectionObserver(entries => {
@@ -1902,7 +1754,6 @@
     }, { rootMargin: '-50% 0px -45% 0px' });
     sections.forEach(s => scrollSpy.observe(s));
 
-    // Hamburger
     const hamburger = document.getElementById('hamburger');
     const drawer = document.getElementById('nav-drawer');
     hamburger.addEventListener('click', () => {
@@ -1914,20 +1765,6 @@
         hamburger.classList.remove('open');
         drawer.classList.remove('open');
       });
-    });
-
-    // Photo upload
-    document.getElementById('photo-input').addEventListener('change', function (e) {
-      const file = e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function (ev) {
-        const img = document.getElementById('profile-img');
-        img.src = ev.target.result;
-        img.style.display = 'block';
-        document.getElementById('photo-placeholder').style.display = 'none';
-      };
-      reader.readAsDataURL(file);
     });
   </script>
 </body>
